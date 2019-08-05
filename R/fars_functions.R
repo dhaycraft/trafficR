@@ -67,7 +67,6 @@ fars_read_years <- function(years) {
 #' \dontrun{fars_summarize_years(2013:2014)}
 #' @note Warning: Will not work if years are not in 2013, 2014, or 2015 as those are the only years with data files
 #' @importFrom dplyr bind_rows %>% group_by summarize n
-#' @import magrittr
 #' @import dplyr
 #' @importFrom tidyr spread
 #' @export
