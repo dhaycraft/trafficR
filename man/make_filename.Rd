@@ -19,5 +19,5 @@ Takes either a number or a string that is the year with no spaces to create a fi
 Warning: Will not work if year is not 2013, 2014, or 2015 as those are the only years with data files
 }
 \examples{
-make_filename(2013)
+ \dontrun{make_filename(2013)}
 }

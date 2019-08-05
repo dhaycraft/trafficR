@@ -4,7 +4,7 @@
 #' @param filename file path as character string.
 #' @return a tbl_df of the selected file if is csv if it exists
 #' @examples
-#' fars_read("accident_2013.csv.bz2")
+#'  \dontrun{fars_read("accident_2013.csv.bz2")}
 #' @note Warning: Function will not work if not given valid file name.
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
@@ -25,7 +25,7 @@ fars_read <- function(filename) {
 #' @param year string or numeric that indicates the year of the FARS data that the file name will be created to read.
 #' @return a string that is the file name to be used in fars_read for the input year
 #' @examples
-#' make_filename(2013)
+#'  \dontrun{make_filename(2013)}
 #' @note Warning: Will not work if year is not 2013, 2014, or 2015 as those are the only years with data files
 #' @export
 make_filename <- function(year) {
@@ -64,8 +64,12 @@ fars_read_years <- function(years) {
 #' @param years string or numeric that indicates the years to be summarised.
 #' @return tbl_df with columns being the years summarised and rows being the months and each entry being the number of events
 #' @examples
-#' fars_summarize_years(2013:2014)
+#' \dontrun{fars_summarize_years(2013:2014)}
 #' @note Warning: Will not work if years are not in 2013, 2014, or 2015 as those are the only years with data files
+#' @importFrom dplyr bind_rows %>% group_by summarize n
+#' @import magrittr
+#' @import dplyr
+#' @importFrom tidyr spread
 #' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
@@ -83,8 +87,8 @@ fars_summarize_years <- function(years) {
 #' @param year the year for the accident events
 #' @return a plot of the state with points for each accident
 #' @examples
-#' #Plot California accident patterns
-#' fars_map_state(state.num=6, year=2013)
+#'  \dontrun{#Plot California accident patterns
+#' fars_map_state(state.num=6, year=2013)}
 #' @note Warning: This function appears to be slightly buggy not returning all events on first plotting
 #' @importFrom dplyr filter
 #' @importFrom maps map

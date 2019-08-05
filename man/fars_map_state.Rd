@@ -21,6 +21,6 @@ Reads in data for a particular year and maps the events in a given state specifi
 Warning: This function appears to be slightly buggy not returning all events on first plotting
 }
 \examples{
-#Plot California accident patterns
-fars_map_state(state.num=6, year=2013)
+ \dontrun{#Plot California accident patterns
+fars_map_state(state.num=6, year=2013)}
 }

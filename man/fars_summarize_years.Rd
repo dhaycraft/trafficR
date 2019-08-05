@@ -19,5 +19,5 @@ Reads in data for each year and summarises the counts of events by month and yea
 Warning: Will not work if years are not in 2013, 2014, or 2015 as those are the only years with data files
 }
 \examples{
-fars_summarize_years(2013:2014)
+\dontrun{fars_summarize_years(2013:2014)}
 }

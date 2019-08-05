@@ -1,0 +1,56 @@
+---
+title: "Example Usage of FARS Functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{example-fars}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(trafficR)
+```
+
+First we need to create the filename for a given accident data.
+
+```{r make_filename}
+#get filename
+fname <-make_filename(2013)
+fname
+file.path("..","data",fname)
+
+```
+
+
+Next we can read in a single data set using the file name we just created. Each row of the data represents a single accident.
+
+
+```{r fars_read}
+df <- fars_read(fname)
+head(df)
+```
+
+If you need to read in multiple years just use **fars_read_years**. In the following example only 2013 and 2014.
+
+```{r fars_read_years}
+fars_read_years(2013:2014)
+```
+
+Now to get the summary of the counts by year we can use the following function.
+
+```{r fars_summarize}
+fars_summarize_years(2013:2014)
+```
+
+Lastly we will plot map of accidents for California using **fars_map_state**
+
+```{r fars_map_state}
+fars_map_state(state.num=6, year=2013)
+```

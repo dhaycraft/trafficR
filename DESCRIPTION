@@ -1,5 +1,5 @@
 Package: trafficR
-Title: 
+Title: A Package for Analyzing FARS Data
 Version: 0.0-1
 Authors@R: 
     person(given = "David",
@@ -12,13 +12,16 @@ Description: Provides functions to analyze as well as the accompanying data from
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 3.6.1)
+Depends: R (>= 3.6.1),
+         dplyr (>= 0.8.3)
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
 Imports: 
-    dplyr,
     readr,
     tidyr,
     graphics,
     maps
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr

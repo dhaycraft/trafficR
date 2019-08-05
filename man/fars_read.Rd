@@ -19,5 +19,5 @@ Reads in a CSV from a file location as tbl_df data for FARS.
 Warning: Function will not work if not given valid file name.
 }
 \examples{
-fars_read("accident_2013.csv.bz2")
+ \dontrun{fars_read("accident_2013.csv.bz2")}
 }
